@@ -56,30 +56,6 @@
             font-weight: 600;
         }
 
-        .call-indicator {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .pulsing-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #ff4757;
-            border-radius: 50%;
-            animation: pulse 1.2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
-        }
-
         /* Contenu principal */
         .content {
             display: grid;
@@ -175,10 +151,6 @@
         <div class="header">
             <div class="header-title">
                 <span>Système CRM - Tourisme et Événements Québec</span>
-            </div>
-            <div class="call-indicator">
-                <div class="pulsing-dot"></div>
-                00:14 - Appel Entrant
             </div>
         </div>
 
