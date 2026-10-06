@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Pop - Dossier Festival</title>
+    <style>
+        :root {
+            --qc-blue: #0953a2;
+            --light-gray: #f4f6f8;
+            --border-color: #e0e4e8;
+            --text-dark: #2c3e50;
+            --success-green: #2ecc71;
+            --warning-orange: #f39c12;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .screen-pop-container {
+            background-color: white;
+            width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* En-tête */
+        .header {
+            background-color: var(--qc-blue);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .call-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .pulsing-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ff4757;
+            border-radius: 50%;
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+        }
+
+        /* Contenu principal */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 25px;
+            background-color: var(--light-gray);
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        h3 {
+            margin-top: 0;
+            color: var(--qc-blue);
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .info-label {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: var(--text-dark);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: white;
+        }
+
+        .badge.approved { background-color: var(--success-green); }
+        .badge.pending { background-color: var(--warning-orange); color: #333; }
+
+        /* Pied de page / Actions */
+        .footer {
+            padding: 15px 25px;
+            background: white;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .btn-outline {
+            background: white;
+            border: 1px solid var(--qc-blue);
+            color: var(--qc-blue);
+        }
+
+        .btn-outline:hover { background: var(--light-gray); }
+
+        .btn-primary {
+            background: var(--qc-blue);
+            color: white;
+        }
+
+        .btn-primary:hover { background: #074182; }
+
+    </style>
+</head>
+<body>
+
+    <div class="screen-pop-container">
+        <!-- En-tête -->
+        <div class="header">
+            <div class="header-title">
+                <span>Système CRM - Tourisme et Événements Québec</span>
+            </div>
+            <div class="call-indicator">
+                <div class="pulsing-dot"></div>
+                00:14 - Appel Entrant
+            </div>
+        </div>
+
+        <!-- Contenu des colonnes -->
+        <div class="content">
+            <!-- Profil de l'appelant -->
+            <div class="card">
+                <h3>Profil de l'Organisateur</h3>
+                <div class="info-row">
+                    <span class="info-label">Nom :</span>
+                    <span class="info-value">Marc-Antoine Lemay</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Fonction :</span>
+                    <span class="info-value">Directeur Général</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Téléphone :</span>
+                    <span class="info-value">(418) 723-9090</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Courriel :</span>
+                    <span class="info-value">direction@brumesmusicales.ca</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Authentification :</span>
+                    <span class="info-value" style="color: green;">✔ Validée (NIP)</span>
+                </div>
+            </div>
+
+            <!-- Dossier Subvention -->
+            <div class="card">
+                <h3>Dossier Festival</h3>
+                <div class="info-row">
+                    <span class="info-label">Événement :</span>
+                    <span class="info-value">Les Brumes Musicales (F-001)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">No. Dossier :</span>
+                    <span class="info-value">PAFET-2026-8842</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Statut Demande :</span>
+                    <span class="info-value"><span class="badge approved">Approuvée</span></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Montant accordé :</span>
+                    <span class="info-value">45 000,00 $</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Étape actuelle :</span>
+                    <span class="info-value"><span class="badge pending">En attente reddition</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions (boutons au bas) -->
+        <div class="footer">
+            <button class="btn btn-outline">Transférer l'appel</button>
+            <button class="btn btn-primary">Ouvrir le dossier complet</button>
+        </div>
+    </div>
+
+</body>
+</html>
